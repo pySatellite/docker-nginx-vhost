@@ -1,0 +1,12 @@
+upstream serv {
+    server serv-a:80;
+    server serv-b:80;
+}
+server {
+    listen 80;
+        
+    location / 
+    {
+        proxy_pass http://serv;
+    }
+}
