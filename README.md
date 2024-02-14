@@ -4,3 +4,19 @@
 
 # load-balancing
 https://www.nginx.com/resources/glossary/load-balancing/
+
+# step 1
+- docker rm * rmi
+```
+$ sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+$ sudo docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+# step 2
+```
+$ docker run -itd -p 8002:80 --name serv-a nginx
+$ docker run -itd -p 8003:80 --name serv-a nginx
+$ docker run -itd -p 8001:80 --name lb nginx:latest
+```
